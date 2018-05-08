@@ -1,0 +1,21 @@
+{
+  "input":[
+    {"id":"testid", "type":"input", "filepath":"plugin.plugintest.InputTestPlugin", "name":"test", "trigger":{"type":"cron","day_of_week":"mon-fri","hour":"0-23","minute":"0-35","second":"*/20"},"paramter":{"a":"dsd","b":"dee","output":"outputId"}},
+    {"id":"hostcpuid", "type":"input", "filepath":"plugin.hostcpuplugin.HostCpuPlugin", "name":"hostcpu", "trigger":"interval","seconds":20,"paramter":{"hostname":"mytesthost","output":"tcpoutputId"}},
+    {"id":"hostdfid", "type":"input", "filepath":"plugin.hostdiskplugin.HostDfPlugin", "name":"hostdf", "trigger":"interval","seconds":50,"paramter":{"hostname":"mytesthost","disk":"/home","output":"tcpoutputId"}},
+    {"id":"hostduid", "type":"input", "filepath":"plugin.hostdiskplugin.HostDuPlugin", "name":"hostdu", "trigger":"interval","seconds":50,"paramter":{"hostname":"mytesthost","path":"/home","output":"tcpoutputId"}},
+    {"id":"hostinterfaceid", "type":"input", "filepath":"plugin.hostnetworkplugin.HostInterfacePlugin", "name":"hostinterface", "trigger":"interval","seconds":30,"paramter":{"hostname":"mytesthost","interface":"enp0s3","output":"tcpoutputId"}},
+    {"id":"hostmemid", "type":"input", "filepath":"plugin.hostmemplugin.HostMemPlugin", "name":"hostinterface", "trigger":"interval","seconds":30,"paramter":{"hostname":"mytesthost","output":"tcpoutputId"}},
+    {"id":"containerid", "type":"input", "filepath":"plugin.dockerplugin.ContainerPlugin", "name":"containerinterface", "trigger":"interval","seconds":30,"paramter":{"filters":["status=running","env=BEE_MONITOR_SERVICE=mongodb"],"bss":"mongodb","containername":"{{env.BEE_MONITOR_ZONE}}/{{env.BEE_MONITOR_APPNAME}}/{{env.BEE_MONITOR_APPNODE}}","output":"tcpoutputId"}},
+
+    {"id":"rdsmysqlid", "type":"input", "filepath":"plugin.rdsmysqlplugin.RdsMysqlMonitorPlugin", "name":"rdsmysqlmonitor", "trigger":"interval","seconds":60,"paramter":{"hostname":"test120","filters":["status=running","ancestor=mysql"],"bss":"rds","containername":"rds-rdd/{{name}}","instance":"{{id}}","output":"tcpoutputId"}}
+
+  ],
+  
+  "output":[
+    {"id":"outputId", "type":"output", "filepath":"plugin.stdoutplugin.OutputStdOutPlugin", "name":"tesst", "paramter":{"a":"ew","b":"gg"}},
+    {"id":"udpoutputId", "type":"output", "filepath":"plugin.outputudpplugin.OutputUdpPlugin", "name":"udp", "paramter":{"ip":"10.0.2.81","port":35098}},
+    {"id":"tcpoutputId", "type":"output", "filepath":"plugin.outputtcpplugin.OutputTcpPlugin", "name":"tcp", "paramter":{"ip":"10.0.2.81","port":35098,"cachesize":3,"block":true}}
+    
+    ]
+}

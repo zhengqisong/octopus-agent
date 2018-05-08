@@ -1,0 +1,6 @@
+projectKey=octopus
+serverUrl=http://10.0.2.80:9000
+serverVersion=6.6.0.32724
+dashboardUrl=http://10.0.2.80:9000/dashboard/index/octopus
+ceTaskId=AV-VS7VD47CKOoqMBcKI
+ceTaskUrl=http://10.0.2.80:9000/api/ce/task?id=AV-VS7VD47CKOoqMBcKI

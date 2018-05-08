@@ -1,0 +1,6 @@
+#docker run -v /:/rootfs:rw -v /usr/bin/docker-current:/usr/bin/docker:rw -v /var/run/docker.sock:/var/run/docker.sock:rw -d octopus:1.0.1
+#yum install -y epel-release && yum install -y python-pip && yum clean all
+Flask
+Flask-APScheduler
+ipaddr
+
